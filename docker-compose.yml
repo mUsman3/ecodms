@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  ecodms:
+    image: ecodms/allinone-18.09:latest
+    container_name: ecodms
+    ports:
+      - "17001:17001"
+      - "17004:8080"
+      - "17005:8180"
+    volumes:
+      - /volume2/ecodmsData:/srv/data
+      - /volume1/ecoDMS/scaninput:/srv/scaninput
+      - /volume1/ecoDMS/backup:/srv/backup
+      - /volume1/ecoDMS/restore:/srv/restore
+    restart: always
